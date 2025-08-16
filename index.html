@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BugHunter.Shop</title>
+  <link rel="stylesheet" href="static/css/styles.css">
+  <link rel="icon" type="image/x-icon" href="static/favico/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+	  <div class="logo"><a href="index.html">BugHunter.Shop</a></div>
+    <nav>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Products (1)</h2>
+    <div class="product-grid">
+      <div class="product">
+        <h3>0x01 Customized 3D Hacker Wall Art</h3>
+        <div class="product-images">
+          <a href="#img1"><img src="static/img/wallart1.jpg" alt="Wall Art 1"></a>        </div>
+        <p>
+          Get your hacker alias/username engraved on a high-quality 3D wall art piece. 
+          Perfect for bug bounty hunters and security professionals.
+        </p>
+        <ul class="features">
+            <li>Made from eco-friendly PLA</li>
+            <li>Sturdy 3 mm thickness</li>
+            <li>Customizable design</li>
+            <li>Perfect for your work setup</li>
+          </ul>
+        <p><strong>Price:</strong> ₹799</p>
+        <button class="order-btn" onclick="sendMail('Customized 3D Hacker Wall Art')">Order Now</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="img1" class="lightbox"><a href="#"><img src="static/img/wallart1.jpg"></a></div>
+  <footer>
+    <p>© 2025 BugHunter.Shop | All Rights Reserved</p>
+  </footer>
+
+  <!-- Overlay Order Form -->
+  <div id="orderModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+      <div class="modal-header">
+        <div class="modal-title" id="orderTitle">Order: <span id="productDisplay"></span></div>
+        <button id="orderClose" class="close-btn" aria-label="Close">×</button>
+      </div>
+      <form id="orderForm" class="modal-body">
+        <input type="hidden" id="productField" value="">
+
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" required>
+
+        <label for="alias">Hacker/Alias</label>
+        <input type="text" id="alias" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="contact">Contact No</label>
+        <input type="tel" id="contact" required>
+
+        <label for="address">Shipping Address</label>
+        <textarea id="address" rows="3" required></textarea>
+
+        <label for="note">Order Note</label>
+        <textarea id="note" rows="3"></textarea>
+
+        <div class="modal-footer">
+          <button type="submit" class="order-submit">Submit Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="static/js/app.js"></script>
+</body>
+</html>
