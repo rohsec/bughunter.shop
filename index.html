@@ -46,7 +46,7 @@
   </footer>
 
   <!-- Overlay Order Form -->
-  <div id="orderModal" class="modal" aria-hidden="true">
+  <!-- <div id="orderModal" class="modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
       <div class="modal-header">
         <div class="modal-title" id="orderTitle">Order: <span id="productDisplay"></span></div>
@@ -78,7 +78,51 @@
         </div>
       </form>
     </div>
+  </div> -->
+
+  <!-- Overlay Order Form -->
+<div id="orderModal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <div class="modal-header">
+      <div class="modal-title" id="orderTitle">Order: <span id="productDisplay"></span></div>
+      <button id="orderClose" class="close-btn" aria-label="Close">×</button>
+    </div>
+
+    <form id="orderForm" class="modal-body"
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScA3qp-6EbwjAueAhAW1Z63v_NVbts_ILtNOhv9wzm_Gjw_9Q/formResponse"
+      method="POST"
+      target="hidden_iframe">
+
+      <!-- Product Name -->
+      <input type="hidden" id="productField" name="entry.574793770" value="">
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="entry.2005620554" required>
+
+      <label for="alias">Hacker/Alias</label>
+      <input type="text" id="alias" name="entry.2084739997" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="entry.1045781291" required>
+
+      <label for="contact">Contact No</label>
+      <input type="tel" id="contact" name="entry.1166974658" required>
+
+      <label for="address">Shipping Address</label>
+      <textarea id="address" name="entry.1065046570" rows="3" required></textarea>
+
+      <label for="note">Order Note</label>
+      <textarea id="note" name="entry.839337160" rows="3"></textarea>
+
+      <div class="modal-footer">
+        <button type="submit" class="order-submit">Submit Order</button>
+      </div>
+    </form>
   </div>
+</div>
+
+<!-- Hidden iframe to prevent Google redirect -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
   <script src="static/js/app.js"></script>
 </body>
